@@ -10,7 +10,19 @@ $(function() {
   $(this).addClass("focus");
 });
 $( "html" ).keydown(function( event ) {
-  if (event.which != 116 && event.which != 122 && event.which != 123 ) {
+  if (
+    event.which == 9 ||
+    event.which == 16 ||
+    event.which == 17 ||
+    event.which == 18 ||
+    event.which == 33 ||
+    event.which == 34 ||
+    event.which == 35 ||
+    event.which == 36 ||
+    event.which == 45 ||
+    event.which == 46 ||
+    event.which == 93 ||
+    event.which == 192 ) {
     event.preventDefault();
   }
 
@@ -27,7 +39,8 @@ $( "html" ).keydown(function( event ) {
   console.log( msg);
   console.log( event );
 });
-less.modifyVars({
-  '@base': '#FF00FF'
-});
-window.setInterval("less.watch();",500);
+
+// less.modifyVars({
+//   '@base': '#FF00FF'
+// });
+// window.setInterval("less.watch();",500);
