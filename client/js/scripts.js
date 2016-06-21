@@ -8,6 +8,7 @@ $(function() {
   $(".window").addClass("unfocus");
   $(this).removeClass("unfocus");
   $(this).addClass("focus");
+  $(".focus input").focus();
 });
 $( "html" ).keydown(function( event ) {
   if (
