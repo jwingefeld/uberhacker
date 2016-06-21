@@ -1,0 +1,104 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  color: #aaffd1;
+  font-family: 'Source Code Pro';
+}
+html {
+  background: url("../images/backgrounds/6.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+}
+body {
+  background: url("../images/logos/anonymous.png") no-repeat center center fixed;
+  height: 100%;
+  overflow: hidden;
+}
+.window {
+  border: 3px solid #00dd64;
+  top: 0px;
+  float: left;
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
+}
+.windowtitle {
+  color: #000000;
+  text-align: center;
+  background: #00dd64;
+  padding: 5px;
+  position: absolute;
+  bottom: 0px;
+}
+.windowcontent {
+  padding: 10px;
+  height: inherit;
+}
+.focus {
+  border: 3px solid #44ff99;
+  z-index: 1000;
+}
+.focus .windowtitle {
+  background: #44ff99;
+  font-weight: 900;
+}
+.unfocus {
+  z-index: 900;
+}
+.small {
+  width: 320px;
+  height: 240px;
+}
+.small .windowtitle {
+  padding: 2px;
+}
+.normal {
+  width: 640px;
+  height: 480px;
+}
+.large {
+  width: 1024px;
+  height: 768px;
+}
+#iconbar {
+  background: #00dd64;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 64px;
+  z-index: 1100;
+  padding: 0px;
+}
+#iconbar span {
+  float: left;
+  position: relative;
+  left: 0px;
+  color: #000000;
+  font-weight: 900;
+  top: -64px;
+  width: 64px;
+  height: 64px;
+  background: rgba(68, 255, 153, 0.8);
+  display: none;
+}
+#iconbar.active {
+  background: #44ff99;
+}
+#iconbar.active span {
+  display: inline-block;
+}
+#iconbar .fa {
+  font-size: 48px;
+  line-height: 64px;
+  color: #000000;
+  text-align: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 0;
+}
+#iconbar .active {
+  color: #44ff99;
+  background: #000000;
+}

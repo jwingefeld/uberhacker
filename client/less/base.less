@@ -1,0 +1,117 @@
+@back: #000;
+@base: #44FF99;
+@secondary: darken(@base, 20%);
+@fontcol: lighten(@base,20%);
+@windowback: #000;
+@iconsize: 64px;
+
+* {
+  padding: 0px;
+  margin: 0px;
+  color: @fontcol;
+  font-family: 'Source Code Pro', ;
+}
+html {
+  background: url("../images/backgrounds/6.jpg")  no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+}
+body {
+  background: url("../images/logos/anonymous.png") no-repeat center center fixed;
+  // background-size: 10% 10%;
+  height: 100%;
+  overflow: hidden;
+}
+.window {
+  border: 3px solid @secondary;
+  top: 0px;
+  float: left;
+  box-shadow: 0px 0px 100px fadeout(@back, 20%);
+  background: fadeout(@windowback,10%);
+
+}
+.windowtitle {
+  color: @back;
+  text-align: center;
+  background: @secondary;
+  padding: 5px;
+  position: absolute;
+  bottom: 0px;
+}
+.windowcontent {
+  padding: 10px;
+  height: inherit;
+}
+.focus {
+  border: 3px solid @base;
+  z-index: 1000;
+  .windowtitle {
+    background: @base;
+    font-weight: 900;
+  }
+}
+.unfocus{
+  z-index: 900;
+}
+.small {
+  width: 320px;
+  height: 240px;
+  .windowtitle {
+    padding: 2px;
+  }
+}
+.normal {
+  width: 640px;
+  height: 480px;
+}
+.large {
+  width: 1024px;
+  height: 768px;
+}
+
+#iconbar {
+  background: @secondary;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: @iconsize;;
+  z-index: 1100;
+  padding: 0px;
+
+  span {
+    float: left;
+    position: relative;
+    left: 0px;
+    color: @back;
+    font-weight: 900;
+    top: -@iconsize;
+    width: @iconsize;
+    height: @iconsize;
+    background: fadeout(@base,20%);
+    display: none;
+
+  }
+}
+#iconbar.active {
+  background: @base;
+  span {
+    display: inline-block;
+  }
+
+}
+#iconbar .fa {
+  font-size: @iconsize * 0.75;
+  line-height: @iconsize;;
+  color: @back;
+  text-align: center;
+  width: @iconsize;;
+  height: @iconsize;;
+  margin: 0 0;
+}
+#iconbar .active {
+  color: @base;
+  background: @back;
+}
