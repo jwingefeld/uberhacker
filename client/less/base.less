@@ -2,7 +2,7 @@
 @base: #44FF99;
 @secondary: darken(@base, 20%);
 @fontcol: lighten(@base,20%);
-@windowback: #000;
+@windowback: #999;
 @iconsize: 64px;
 
 * {
@@ -28,7 +28,9 @@ body {
 .window {
   border: 3px solid @secondary;
   top: 0px;
-  float: left;
+  left: @iconsize;
+  position: absolute;
+  float: right;
   box-shadow: 0px 0px 100px fadeout(@back, 20%);
   background: fadeout(@windowback,10%);
 

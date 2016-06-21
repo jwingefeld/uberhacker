@@ -14,7 +14,7 @@ $( "html" ).keydown(function( event ) {
     event.preventDefault();
   }
 
-  if (event.which == 160) {
+  if (event.which == 192) {
     $("#iconbar").toggleClass("active");
   }
   if ($("#iconbar").hasClass( "active" )) {
@@ -27,3 +27,7 @@ $( "html" ).keydown(function( event ) {
   console.log( msg);
   console.log( event );
 });
+less.modifyVars({
+  '@base': '#FF00FF'
+});
+window.setInterval("less.watch();",500);
