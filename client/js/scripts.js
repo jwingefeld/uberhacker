@@ -10,6 +10,12 @@ $(function() {
   $(this).addClass("focus");
   $(".focus input").focus();
 });
+$( ".window form" ).submit(function( event ) {
+  value = $(".focus input").val();
+  $(".focus input").val("");
+  alert(value);
+  event.preventDefault();
+});
 $( "html" ).keydown(function( event ) {
   if (
     event.which == 9 ||
@@ -35,6 +41,7 @@ $( "html" ).keydown(function( event ) {
       console.log("starte programm " + (event.which - 48));
       $("#iconbar").toggleClass("active");
     }
+    event.preventDefault();
   }
   var msg = "Handler for .keypress() called " + event.which;
   console.log( msg);
