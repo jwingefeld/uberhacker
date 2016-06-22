@@ -40,7 +40,19 @@ $( "html" ).keydown(function( event ) {
   console.log( msg);
   console.log( event );
 });
+var windowlist = "";
+function createWindow(windowTitle,windowCodebase, windowSize) {
 
+}
+function windowFocus(windowId) {
+  toFocus = $("#" + windowId);
+  $(".window").removeClass("focus");
+  $(".window").addClass("unfocus");
+  $(toFocus).removeClass("unfocus");
+  $(toFocus).addClass("focus");
+  $(".focus input").focus();
+
+}
 // less.modifyVars({
 //   '@base': '#FF00FF'
 // });
