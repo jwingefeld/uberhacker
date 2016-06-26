@@ -39,7 +39,11 @@ $( "html" ).keydown(function( event ) {
   if ($("#iconbar").hasClass( "active" )) {
     if (event.which >=48 && event.which <= 57 ) {
       console.log("starte programm " + (event.which - 48));
+
       $("#iconbar").toggleClass("active");
+    }
+    if (event.which == 83) {
+      createWindow('','',"small");
     }
     event.preventDefault();
   }
@@ -48,7 +52,9 @@ $( "html" ).keydown(function( event ) {
   console.log( event );
 });
 var windowlist = "";
-function createWindow(windowTitle,windowCodebase, windowSize) {
+function createWindow(windowTitle="le-le-lew1nD0w",windowCodebase="", windowSize="normal") {
+  $("#windowlist").append("<div class=\"window " + windowSize + " unfocus ui-widget-content\"><form><div class=\"windowtitle\">" + windowTitle + " #<input class=\"windowinput\" type=\"text\" /></div></form><div class=\"windowcontent\">WindowContentOfTheYear</div></div>");
+  $( ".window" ).draggable();
 
 }
 function windowFocus(windowId) {
@@ -63,4 +69,4 @@ function windowFocus(windowId) {
 // less.modifyVars({
 //   '@base': '#FF00FF'
 // });
-// window.setInterval("less.watch();",500);
+window.setInterval("less.watch();",500);
