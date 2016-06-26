@@ -3,13 +3,13 @@ $(function() {
   $( "#iconbar" ).draggable();
 
 });
-  $(".window").click(function() {
+function focusme(what) {
   $(".window").removeClass("focus");
   $(".window").addClass("unfocus");
-  $(this).removeClass("unfocus");
-  $(this).addClass("focus");
+  $(what).removeClass("unfocus");
+  $(what).addClass("focus");
   $(".focus input").focus();
-});
+}
 $( ".window form" ).submit(function( event ) {
   value = $(".focus input").val();
   $(".focus input").val("");
@@ -53,7 +53,7 @@ $( "html" ).keydown(function( event ) {
 });
 var windowlist = "";
 function createWindow(windowTitle="le-le-lew1nD0w",windowCodebase="", windowSize="normal") {
-  $("#windowlist").append("<div class=\"window " + windowSize + " unfocus ui-widget-content\"><form><div class=\"windowtitle\">" + windowTitle + " #<input class=\"windowinput\" type=\"text\" /></div></form><div class=\"windowcontent\">WindowContentOfTheYear</div></div>");
+  $("#windowlist").append("<div class=\"window " + windowSize + " unfocus ui-widget-content\" onclick=\"focusme(this);\"><form><div class=\"windowtitle\">" + windowTitle + " #<input class=\"windowinput\" type=\"text\" /></div></form><div class=\"windowcontent\">WindowContentOfTheYear</div></div>");
   $( ".window" ).draggable();
 
 }
