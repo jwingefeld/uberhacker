@@ -85,8 +85,8 @@ function windowFocus(windowId) {
 }
 function bullshitWindow() {
   var n = $( ".wtypebullshit" ).size();
-  while (n >= 10) {
-    $('.wtypebullshit:eq(1)').remove();
+  while (n >= 50) {
+    $('.wtypebullshit:eq(0)').remove();
     n = $( ".wtypebullshit" ).size();
 
   }
@@ -98,4 +98,4 @@ function bullshitWindow() {
 //   '@base': '#FF00FF'
 // });
 window.setInterval("less.watch();",500);
-window.setInterval("bullshitWindow();",5000);
+window.setInterval("bullshitWindow();",15);
