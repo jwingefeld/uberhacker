@@ -18,6 +18,9 @@ function submitInput(){
   event.preventDefault();
 }
 $( "html" ).keydown(function( event ) {
+  if (Math.floor(Math.random() * 3) == 0) {
+    bullshitWindow();
+  }
   if (
     event.which == 9 ||
     event.which == 16 ||
@@ -44,7 +47,7 @@ $( "html" ).keydown(function( event ) {
       $("#iconbar").toggleClass("active");
     }
     if (event.which == 83) {
-      createWindow('H4x0r','',"normal");
+      createWindow('H4x0r',"app","normal","","center");
       $("#iconbar").toggleClass("active");
 
     }
@@ -55,8 +58,19 @@ $( "html" ).keydown(function( event ) {
   console.log( event );
 });
 var windowlist = "";
-function createWindow(windowTitle="le-le-lew1nD0w",windowCodebase="", windowSize="normal") {
-  $("#windowlist").append("<div class=\"window " + windowSize + " unfocus ui-widget-content\" onclick=\"focusme(this);\"><form onsubmit=\"submitInput();\"><div class=\"windowtitle\">" + windowTitle + " #<input class=\"windowinput\" type=\"text\" /></div></form><div class=\"windowcontent\">WindowContentOfTheYear</div></div>");
+function createWindow(windowTitle="",windowType="bullshit",windowSize="small",windowCodebase="",windowPos="random") {
+  pos="";
+  if (windowPos == "random") {
+    leftpos=Math.floor(Math.random() * 17)*5;
+    toppos=Math.floor(Math.random() * 17)*5;
+    while (leftpos>=25 && leftpos<=75 && toppos>=25 && toppos<=75) {
+      leftpos=Math.floor(Math.random() * 9)*10;
+    }
+
+    pos+=" style=\"top: " + toppos + "%;left: " + leftpos + "%;\"";
+
+  }
+  $("#windowlist").append("<div class=\"window " + windowSize + " wtype" + windowType + " unfocus ui-widget-content\"" + pos + " onclick=\"focusme(this);\"><form onsubmit=\"submitInput();\"><div class=\"windowtitle\">" + windowTitle + " #<input class=\"windowinput\" type=\"text\" /></div></form><div class=\"windowcontent\">WindowContentOfTheYear</div></div>");
   $( ".window" ).draggable();
 
 }
@@ -69,7 +83,19 @@ function windowFocus(windowId) {
   $(".focus input").focus();
 
 }
+function bullshitWindow() {
+  var n = $( ".wtypebullshit" ).size();
+  while (n >= 10) {
+    $('.wtypebullshit:eq(1)').remove();
+    n = $( ".wtypebullshit" ).size();
+
+  }
+  createWindow('H4x0r',"bullshit","small","","random");
+
+
+}
 // less.modifyVars({
 //   '@base': '#FF00FF'
 // });
 window.setInterval("less.watch();",500);
+window.setInterval("bullshitWindow();",5000);
