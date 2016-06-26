@@ -10,12 +10,13 @@ function focusme(what) {
   $(what).addClass("focus");
   $(".focus input").focus();
 }
-$( ".window form" ).submit(function( event ) {
+
+function submitInput(){
   value = $(".focus input").val();
   $(".focus input").val("");
   alert(value);
   event.preventDefault();
-});
+}
 $( "html" ).keydown(function( event ) {
   if (
     event.which == 9 ||
@@ -43,7 +44,9 @@ $( "html" ).keydown(function( event ) {
       $("#iconbar").toggleClass("active");
     }
     if (event.which == 83) {
-      createWindow('','',"small");
+      createWindow('H4x0r','',"normal");
+      $("#iconbar").toggleClass("active");
+
     }
     event.preventDefault();
   }
@@ -53,7 +56,7 @@ $( "html" ).keydown(function( event ) {
 });
 var windowlist = "";
 function createWindow(windowTitle="le-le-lew1nD0w",windowCodebase="", windowSize="normal") {
-  $("#windowlist").append("<div class=\"window " + windowSize + " unfocus ui-widget-content\" onclick=\"focusme(this);\"><form><div class=\"windowtitle\">" + windowTitle + " #<input class=\"windowinput\" type=\"text\" /></div></form><div class=\"windowcontent\">WindowContentOfTheYear</div></div>");
+  $("#windowlist").append("<div class=\"window " + windowSize + " unfocus ui-widget-content\" onclick=\"focusme(this);\"><form onsubmit=\"submitInput();\"><div class=\"windowtitle\">" + windowTitle + " #<input class=\"windowinput\" type=\"text\" /></div></form><div class=\"windowcontent\">WindowContentOfTheYear</div></div>");
   $( ".window" ).draggable();
 
 }
