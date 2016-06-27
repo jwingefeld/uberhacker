@@ -33,11 +33,11 @@ $( "html" ).keydown(function( event ) {
     event.which == 45 ||
     event.which == 46 ||
     event.which == 93 ||
-    event.which == 192 ) {
+    event.which == 113 ) {
     event.preventDefault();
   }
 
-  if (event.which == 192) {
+  if (event.which == 113) {
     $("#iconbar").toggleClass("active");
   }
   if ($("#iconbar").hasClass( "active" )) {
@@ -46,7 +46,7 @@ $( "html" ).keydown(function( event ) {
 
       $("#iconbar").toggleClass("active");
     }
-    if (event.which == 83) {
+    if (event.which == 84) {
       createWindow('H4x0r',"app","normal","","center");
       $("#iconbar").toggleClass("active");
 
@@ -85,7 +85,7 @@ function windowFocus(windowId) {
 }
 function bullshitWindow() {
   var n = $( ".wtypebullshit" ).size();
-  while (n >= 50) {
+  while (n >= 10) {
     $('.wtypebullshit:eq(0)').remove();
     n = $( ".wtypebullshit" ).size();
 
@@ -98,4 +98,4 @@ function bullshitWindow() {
 //   '@base': '#FF00FF'
 // });
 window.setInterval("less.watch();",500);
-window.setInterval("bullshitWindow();",15);
+window.setInterval("bullshitWindow();",1000);
