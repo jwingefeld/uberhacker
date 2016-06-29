@@ -99,10 +99,23 @@ body {
 }
 
 #scoreboard {
-  background: rgba(255,255,255,.5);
+  background: @windowback;
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 0px;
+  border: 1px solid @base;
+  bottom: 0px;
+  z-index: 950;
+  width: 200px;
+  padding: 15px 20px;
+  .playerbar {
+    border: 1px solid @back;
+    text-align: left;
+    padding-left: 10px;
+    margin-left: -5px;
+    background: inherit no-repeat left center @base;
+    color: @back;
+    line-height: @iconsize;
+  }
 }
 #iconbar {
   background: @secondary;

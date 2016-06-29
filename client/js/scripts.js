@@ -1,4 +1,4 @@
-$(function() {
+  $(function() {
   $( ".window" ).draggable();
   $( "#iconbar" ).draggable();
 
@@ -121,5 +121,5 @@ function AppbullshitInit(target) {
 
   $(target.selector + " .windowcontent").html(randomvalue);
 }
-//window.setInterval("less.watch();",500);
+window.setInterval("less.watch();",500);
 window.setInterval("bullshitWindow();",5000);
