@@ -47,19 +47,24 @@ $( "html" ).keydown(function( event ) {
       $("#iconbar").toggleClass("active");
     }
     if (event.which == 84) {
-      createWindow('H4x0r',"app","normal","","center");
+      createWindow('Terminal',"app","normal","","center");
       $("#iconbar").toggleClass("active");
 
+    }
+    if (event.which == 82) {
+      randomColor();
     }
     event.preventDefault();
   }
   var msg = "Handler for .keypress() called " + event.which;
   console.log( msg);
-  console.log( event );
 });
 var windowlist = "";
 function createWindow(windowTitle="",windowType="bullshit",windowSize="small",windowCodebase="",windowPos="random") {
+  windowId=Math.floor(Math.random()*16777215).toString(16);
+  var scriptlink = "<script type=\"text/javascript\">if (typeof App" + windowCodebase + "Init == 'function') { App" + windowCodebase + "Init($(\"#windowId" + windowId + "\")); }</script>";
   pos="";
+  autoFocus="";
   if (windowPos == "random") {
     leftpos=Math.floor(Math.random() * 17)*5;
     toppos=Math.floor(Math.random() * 17)*5;
@@ -70,7 +75,10 @@ function createWindow(windowTitle="",windowType="bullshit",windowSize="small",wi
     pos+=" style=\"top: " + toppos + "%;left: " + leftpos + "%;\"";
 
   }
-  $("#windowlist").append("<div class=\"window " + windowSize + " wtype" + windowType + " unfocus ui-widget-content\"" + pos + " onclick=\"focusme(this);\"><form onsubmit=\"submitInput();\"><div class=\"windowtitle\">" + windowTitle + " #<input class=\"windowinput\" type=\"text\" /></div></form><div class=\"windowcontent\">WindowContentOfTheYear</div></div>");
+  if (windowType!="bullshit") {
+    autoFocus="<script>focusme($(\"#windowId" + windowId + "\"));</script>";
+  }
+  $("#windowlist").append("<div id=\"windowId" + windowId + "\" class=\"window " + windowSize + " wtype" + windowType + " unfocus ui-widget-content\"" + pos + " onclick=\"focusme(this);\">" + autoFocus + scriptlink + "<form onsubmit=\"submitInput();\"><div class=\"windowtitle\">" + windowTitle + " #<input class=\"windowinput\" type=\"text\" /></div></form><div class=\"windowcontent\"></div></div>");
   $( ".window" ).draggable();
 
 }
@@ -90,12 +98,28 @@ function bullshitWindow() {
     n = $( ".wtypebullshit" ).size();
 
   }
-  createWindow('H4x0r',"bullshit","small","","random");
+  createWindow('H4x0r',"bullshit","small","bullshit","random");
 
 
 }
-// less.modifyVars({
-//   '@base': '#FF00FF'
-// });
-window.setInterval("less.watch();",500);
-window.setInterval("bullshitWindow();",1000);
+function randomColor() {
+  colbase = Math.floor(Math.random()*16777215).toString(16);
+  colback = Math.floor(Math.random()*16777215).toString(16);
+  console.log("#" + colbase + "  -- #" + colback);
+  less.modifyVars({
+    '@base': '#' + colbase,
+    '@back': '#' + colback
+  });
+
+}
+function AppbullshitInit(target) {
+  randomvalue = "";
+  for (i=0;i<=64;i++) {
+    randomvalue+= Math.floor(Math.random()*16).toString(16) + "" + Math.floor(Math.random()*16).toString(16) + " ";
+
+  }
+
+  $(target.selector + " .windowcontent").html(randomvalue);
+}
+//window.setInterval("less.watch();",500);
+window.setInterval("bullshitWindow();",5000);
