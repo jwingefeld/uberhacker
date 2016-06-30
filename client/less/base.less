@@ -1,7 +1,7 @@
 @back: #4f6cf7;
 @base: #2b3bd5;
 @back: #000;
-@base: #F00;
+@base: #0F0;
 @secondary: darken(@base, 20%);
 @fontcol: lighten(@base,20%);
 @windowback: #000;
@@ -102,17 +102,18 @@ body {
   background: @windowback;
   position: fixed;
   right: 0px;
-  border: 1px solid @base;
+  border: 1px solid @secondary;
   bottom: 0px;
   z-index: 950;
   width: 200px;
   padding: 15px 20px;
   .playerbar {
-    border: 1px solid transparent;
+    border: 1px dashed;
     text-align: left;
+    margin-top: 2px;
+    margin-bottom: 2px;
     padding-left: 10px;
     margin-left: -5px;
-    background: no-repeat left center @base;
     color: white;
     font-weight: 900;
     line-height: @iconsize;

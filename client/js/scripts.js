@@ -126,7 +126,7 @@ function updateScoreboard() {
     var output = "";
     var num=1;
     $.each( data, function( key, val ) {
-      output+="    <div id=\"player" + num++ + "\" class=\"playerbar\" style=\"background: " + val.color + ";width: " + val.scorepercent + "%;\">" + val.score + "</div>";
+      output+="    <div id=\"player" + num++ + "\" class=\"playerbar\" style=\"border-color: " + val.color + ";width: " + val.scorepercent + "%;\">" + val.score + "</div>";
     });
     $("#scoreboard").html(output);
     $.each( data, function( key, val ) {
