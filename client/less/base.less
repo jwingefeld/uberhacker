@@ -1,7 +1,7 @@
 @back: #4f6cf7;
 @base: #2b3bd5;
 @back: #000;
-@base: #0F0;
+@base: #F00;
 @secondary: darken(@base, 20%);
 @fontcol: lighten(@base,20%);
 @windowback: #000;
@@ -25,7 +25,7 @@ html {
   overflow: hidden;
 }
 body {
-  background: url("../images/logos/anonymous.png") no-repeat center center fixed;
+  //background: url("../images/logos/anonymous.png") no-repeat center center fixed;
   // background-size: 10% 10%;
   height: 100%;
   overflow: hidden;
@@ -108,12 +108,13 @@ body {
   width: 200px;
   padding: 15px 20px;
   .playerbar {
-    border: 1px solid @back;
+    border: 1px solid transparent;
     text-align: left;
     padding-left: 10px;
     margin-left: -5px;
-    background: inherit no-repeat left center @base;
-    color: @back;
+    background: no-repeat left center @base;
+    color: white;
+    font-weight: 900;
     line-height: @iconsize;
   }
 }
