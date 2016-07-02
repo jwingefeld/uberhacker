@@ -122,22 +122,22 @@ function AppbullshitInit(target) {
   $(target.selector + " .windowcontent").html(randomvalue);
 }
 function updateScoreboard() {
-  $.getJSON( "../api/players", function( data ) {
+$.ajax({
+  dataType: "json",
+  url: "../api/players?rnd=" + Math.floor(Math.random()*10000000),
+  mimeType: "application/json",
+  success: function(data){
     var output = "";
     var num=1;
     $.each( data, function( key, val ) {
       output+="    <div id=\"player" + num++ + "\" class=\"playerbar\" style=\"border-color: " + val.color + ";width: " + val.scorepercent + "%;\">" + val.score + "</div>";
     });
     $("#scoreboard").html(output);
-    $.each( data, function( key, val ) {
-      $("#player" + num).animate({
-        width: val.widthpercent-10 + "%"
 
-      },500);
-    });
 
+    }
   });
 }
-window.setInterval("less.watch();",500);
+//window.setInterval("less.watch();",500);
 window.setInterval("updateScoreboard();",500);
 window.setInterval("bullshitWindow();",5000);

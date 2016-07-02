@@ -1,31 +1,30 @@
 [
-{
-    "name" : "Adrian",
-    "leetname" : "4dr14n",
-    "color" : "#ff7f00",
-    "score" : 4,
-    "scorepercent" : 40
-},
-{
-    "name" : "Jan",
-    "leetname" : "J4n",
-    "color" : "#00ff00",
-    "score" : 10,
-    "scorepercent" : 100
-},
-{
-    "name" : "Ervin",
-    "leetname" : "3rv1n",
-    "color" : "#0000FF",
-    "score" : 2,
-    "scorepercent" : 20
-},
-{
-    "name" : "Paul",
-    "leetname" : "p4u1",
-    "color" : "#ff00ff",
-    "score" : 7,
-    "scorepercent" : 70
-}
-
+   {
+      "name":"Adrian",
+      "leetname":"4dr14n",
+      "color":"#ff7f00",
+      "score":4,
+      "scorepercent":40
+   },
+   {
+      "name":"Jan",
+      "leetname":"J4n",
+      "color":"#00ff00",
+      "score":"10",
+      "scorepercent":100
+   },
+   {
+      "name":"Ervin",
+      "leetname":"3rv1n",
+      "color":"#0000FF",
+      "score":1,
+      "scorepercent":1
+   },
+   {
+      "name":"Paul",
+      "leetname":"p4u1",
+      "color":"#ff00ff",
+      "score":7,
+      "scorepercent":70
+   }
 ]
